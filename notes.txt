@@ -1,0 +1,32 @@
+https://github.com/tomasbjerre/sandbox/blob/master/Jenkinsfile
+
+
+
+pipeline {
+  agent any
+  triggers {
+    GenericTrigger(
+     genericVariables: [
+      [key: 'ref', value: '$.ref']
+     ],
+     causeString: 'Triggered on $ref',
+     
+     token: 'abc123',
+     
+     printContributedVariables: true,
+     printPostContent: true,
+    
+     regexpFilterText: '$ref',
+     regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
+    )
+  }
+  stages {
+    stage('Some step') {
+      steps {
+        sh "echo $ref"
+      }
+    }
+  }
+}
+
+https://github.com/jenkinsci/generic-webhook-trigger-plugin/issues/47
