@@ -7,12 +7,3 @@ Hello3
 Hello3
 fsdaksd
 
-akfsdkn
-adsafkj
-asfsdkfjkasj
-m,nmn
-hkjkhj
-faksfmsdm
-f,sdafsd,f.
-asfksdj
-afksdjk
